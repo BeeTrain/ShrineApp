@@ -1,6 +1,6 @@
 package ru.chernakov.shrineapp.application.ui.fragments;
 
-import android.support.v4.app.Fragment;
+import com.arellomobile.mvp.MvpAppCompatFragment;
 
 import butterknife.Unbinder;
 
@@ -9,7 +9,7 @@ import butterknife.Unbinder;
  *
  * @author Chernakov M.E.
  */
-public class BaseFragment extends Fragment {
+public class BaseFragment extends MvpAppCompatFragment {
 
 	/**
 	 * Инфраструктурный объект Butterknife

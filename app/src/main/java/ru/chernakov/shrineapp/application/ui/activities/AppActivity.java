@@ -14,7 +14,7 @@ import ru.chernakov.shrineapp.R;
  *
  * @author Chernakov M.E.
  */
-public class MainActivity extends AppCompatActivity implements NavigationHost {
+public class AppActivity extends AppCompatActivity implements NavigationHost {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

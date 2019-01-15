@@ -4,10 +4,10 @@ import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import ru.chernakov.shrineapp.application.ui.fragments.ProductGridFragment;
+import ru.chernakov.shrineapp.application.ui.fragments.ProductsFragment;
 
 /**
- * Custom item decoration for a vertical {@link ProductGridFragment} {@link RecyclerView}. Adds a
+ * Custom item decoration for a vertical {@link ProductsFragment} {@link RecyclerView}. Adds a
  * small amount of padding to the left of grid items, and a large amount of padding to the right.
  */
 public class ProductGridItemDecoration extends RecyclerView.ItemDecoration {

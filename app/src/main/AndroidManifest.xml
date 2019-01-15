@@ -14,7 +14,7 @@
 		android:supportsRtl="true"
 		android:theme="@style/Theme.Shrine">
 		<activity
-			android:name=".application.ui.activities.MainActivity">
+			android:name=".application.ui.activities.AppActivity">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN"/>
 

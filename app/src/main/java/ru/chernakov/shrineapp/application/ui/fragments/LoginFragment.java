@@ -10,11 +10,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.arellomobile.mvp.presenter.InjectPresenter;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnTextChanged;
 import ru.chernakov.shrineapp.R;
+import ru.chernakov.shrineapp.application.mvp.presenters.LoginPresenter;
+import ru.chernakov.shrineapp.application.mvp.views.LoginView;
 import ru.chernakov.shrineapp.application.navigation.NavigationHost;
 
 /**
@@ -22,7 +26,8 @@ import ru.chernakov.shrineapp.application.navigation.NavigationHost;
  *
  * @author Chernakov M.E.
  */
-public class LoginFragment extends BaseFragment {
+public class LoginFragment extends BaseFragment implements LoginView {
+	public static final String TAG = LoginFragment.class.getSimpleName();
 
 	/**
 	 * Виджет обертки поля для ввода пароля
@@ -35,6 +40,12 @@ public class LoginFragment extends BaseFragment {
 	 */
 	@BindView(R.id.et_password)
 	TextInputEditText mPassword;
+
+	/**
+	 * Презентер
+	 */
+	@InjectPresenter
+	LoginPresenter mPresenter;
 
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -51,7 +62,7 @@ public class LoginFragment extends BaseFragment {
 			mPasswordLayout.setError(getString(R.string.error_password));
 		} else {
 			mPasswordLayout.setError(null);
-			((NavigationHost) getActivity()).navigateTo(new ProductGridFragment(), false);
+			((NavigationHost) getActivity()).navigateTo(new ProductsFragment(), false);
 		}
 	}
 

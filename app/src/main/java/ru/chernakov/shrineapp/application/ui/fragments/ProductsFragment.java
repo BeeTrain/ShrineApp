@@ -15,11 +15,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
+import com.arellomobile.mvp.presenter.InjectPresenter;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import ru.chernakov.shrineapp.R;
-import ru.chernakov.shrineapp.application.navigation.NavigationIconClickListener;
 import ru.chernakov.shrineapp.application.model.Product;
+import ru.chernakov.shrineapp.application.mvp.presenters.ProductsPresenter;
+import ru.chernakov.shrineapp.application.mvp.views.ProductsView;
+import ru.chernakov.shrineapp.application.navigation.NavigationIconClickListener;
 import ru.chernakov.shrineapp.application.ui.adapters.productcard.ProductGridItemDecoration;
 import ru.chernakov.shrineapp.application.ui.views.staggeredgridlayout.StaggeredProductCardRecyclerViewAdapter;
 
@@ -28,8 +32,8 @@ import ru.chernakov.shrineapp.application.ui.views.staggeredgridlayout.Staggered
  *
  * @author Chernakov M.E.
  */
-public class ProductGridFragment extends BaseFragment {
-	public static final String TAG = ProductGridFragment.class.getSimpleName();
+public class ProductsFragment extends BaseFragment implements ProductsView {
+	public static final String TAG = ProductsFragment.class.getSimpleName();
 
 	/**
 	 * {@link NestedScrollView}, в котором размещен список товаров
@@ -42,6 +46,12 @@ public class ProductGridFragment extends BaseFragment {
 	 */
 	@BindView(R.id.recycler_view)
 	RecyclerView mRecyclerView;
+
+	/**
+	 * Презентер
+	 */
+	@InjectPresenter
+	ProductsPresenter mPresenter;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
